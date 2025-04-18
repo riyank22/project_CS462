@@ -25,7 +25,7 @@ app.post("/logPing", (req, res) => {
 });
 
 
-// Endpoint to get the file size
+// // Endpoint to get the file size
 app.get('/download-file-size', (req, res) => {
   try {
     const stat = fs.statSync("1080.mp4");
@@ -37,7 +37,7 @@ app.get('/download-file-size', (req, res) => {
 });
 
 // Endpoint to stream the file
-app.get('/download-file', (req, res) => {
+app.get('/download', (req, res) => {
   const filePath = "1080.mp4";
   try {
     const stat = fs.statSync(filePath);

@@ -10,7 +10,9 @@ function App() {
     setIsPinging(true);
     setPingResult(null);
     setProgress(0);
-    const serverURL = 'http://localhost:3000'
+    const serverURL = window.location.origin.includes('localhost') 
+    ? 'http://localhost:3000' 
+    : window.location.origin;
 
     const pings = [];
     const numberOfPings = 20;
