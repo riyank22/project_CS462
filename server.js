@@ -1,11 +1,17 @@
 import express from 'express';
 import cors from 'cors';
 import fs from 'fs';
+import { fileURLToPath } from 'url';
+import path from 'path';
 
 const app = express();
 const port = 3000;
 
 app.use(cors());
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const hlsBasePath = path.join(__dirname, 'videos/hls');
+app.use('/hls',cors(), express.static(hlsBasePath));
 app.use(express.json());
 
 app.use(express.static("public"));
@@ -63,6 +69,20 @@ app.get('/download-ttfb', (req, res) => {
   res.setHeader('Content-Type', 'text/plain');
   res.send(`${Date.now() - start}`);
 });
+
+app.get('/video/resolutions', (req, res) => {
+  fs.readdir(hlsBasePath, { withFileTypes: true }, (err, files) => {
+    if (err) return res.status(500).json({ error: 'Could not read folder' });
+
+    const folders = files
+      .filter((f) => f.isDirectory())
+      .map((dir) => dir.name)
+      .sort((a, b) => parseInt(b) - parseInt(a)); // sort high to low
+
+    res.json({ resolutions: folders });
+  });
+});
+
 
 // Error handling middleware
 app.use((req, res) => {
