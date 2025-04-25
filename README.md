@@ -2,7 +2,7 @@
 
 ## 🎓 Course Information
 **Course Title:** 5G Communication Network
-**Instructor:** [Instructor Name]    
+    
 **Semester:** Sprint 2025  
 
 ---
