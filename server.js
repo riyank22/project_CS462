@@ -44,6 +44,7 @@ app.get('/download-file-size', (req, res) => {
 
 // Endpoint to stream the file
 app.get('/download', (req, res) => {
+  //change the file path to the file you want to stream
   const filePath = "1080.mp4";
   try {
     const stat = fs.statSync(filePath);
