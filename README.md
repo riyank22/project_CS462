@@ -10,6 +10,8 @@
 ## 📽️ Project Demo
 Watch the demo video to see the tests in action: [Google Drive Link](https://drive.google.com/file/d/1e7Z6t32Tq1pZITVjrdqYvKdYRG-asq2J/view?usp=drivesdk)
 
+Live Deployement [Link](https://fivegpingtest-11.onrender.com/)
+
 ## 📚 Project Overview
 
 This full-stack application is designed to **evaluate the performance of 5G networks** by running three types of latency tests:
