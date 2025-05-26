@@ -1,4 +1,4 @@
-# 📦 Edge vs Cloud Latency Analyzer
+# 📦 2024GR28CS462 Edge vs Cloud Latency Analyzer
 
 ## 🎓 Course Information
 **Course Title:** 5G Communication Network
